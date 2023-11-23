@@ -3,7 +3,7 @@ import time
 
 r2time1 = time.time()
 # Load a 3D mesh from a file
-mesh = trimesh.load_mesh('E:\\Suyogya Shakya\\Solid2.STL')
+mesh = trimesh.load_mesh('Any file')
 
 # Define a list of points where you want to find tangent spheres
 points = mesh.triangles_center
