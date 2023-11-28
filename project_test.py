@@ -3,7 +3,7 @@ import trimesh
 
 #mesh = trimesh.load_mesh('cup.stl')
 #mesh = trimesh.load_mesh('Rect_1_5_8.stl')
-file_name = 'cup.stl'
+file_name = 'CAD_models/cup.stl'
 mesh = trimesh.load_mesh(file_name)
 
 ray_origin = mesh.triangles_center
