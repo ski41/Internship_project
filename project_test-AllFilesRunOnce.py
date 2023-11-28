@@ -42,12 +42,12 @@ for root, dirs, files in os.walk(fileloc, topdown=False):
 
         #draws a line where the minimum thickness is encountered
         ray_visualize = trimesh.load_path(np.hstack((min_ray,
-                                                     min_ray + min_dir*2.0)).reshape(-1, 2, 3))
+                                                     min_ray + min_dir*0.5)).reshape(-1, 2, 3))
 
         # i=27
         # ray_visualize = trimesh.load_path(np.hstack((ray_origin[i],
         #                                              ray_origin[i] + ray_direction[i])).reshape(-1, 2, 3))
-
+        mesh.unmerge_vertices()
         mesh.visual.face_colors = [255,255,255,255]
         mesh.visual.face_colors[[21,22,27,28]] = [255, 0, 0, 255]
         scene = trimesh.Scene([mesh,ray_visualize])
