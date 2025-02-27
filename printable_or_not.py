@@ -2,7 +2,7 @@ import numpy as np
 import trimesh
 import os
 
-fileloc = 'CAD_models'
+fileloc = 'CAD_models' #folder where .stl files are kept. This works for linux. Should work for windows
 
 # All files in above directory are checked for min. thickness
 for root, dirs, files in os.walk(fileloc, topdown=False):
@@ -48,11 +48,13 @@ for root, dirs, files in os.walk(fileloc, topdown=False):
                                                         min_ray + min_dir*0.5)).reshape(-1, 2, 3))
 
             mesh.unmerge_vertices()
-            mesh.visual.face_colors = [255,255,255,255]
+            #mesh.visual.face_colors = [255,255,255,255] #uncomment for white model
             mesh.visual.face_colors[tri_ind] = [255, 0, 0, 255]
             scene = trimesh.Scene([mesh,ray_visualize])
             scene.show()
 
-            print("Thickness less than 1.5 for file :", file_name)
+            print("Thickness less than 1.5mm for file :", file_name)
         else:
             print("Ok for printing :", file_name)
+        
+        print('\n')    
